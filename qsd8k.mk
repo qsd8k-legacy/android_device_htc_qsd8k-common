@@ -76,8 +76,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.hwc.fakevsync=1 \
     debug.composition.type=mdp \
+    debug.gr.numframebuffers=2 \
+    debug.performance.tuning=1 \
+    video.accelerate.hw=1 \
+    view.scroll_friction=0 \
     ro.zygote.disable_gl_preload=true \
-    debug.gr.numframebuffers=2
+    ro.max.fling_velocity=12000 \
+    ro.min.fling_velocity=8000
 
 #
 # Low Mem
@@ -89,6 +94,14 @@ PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.jit.codecachesize=0
 #
 # Dalvik Properties
 #
+
+# dexop-flags: "v=" n|r|a, "o=" n|v|a|f, "m=y" register map
+# v=verify o=optimize: n=none r=remote a=all f=full v=verified
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.lockprof.threshold=500 \
+    dalvik.vm.dexopt-flags=m=y \
+    ro.sys.fw.bg_apps_limit=12 \
+    dalvik.vm.checkjni=false
 
 # Default heap settings for 512mb device
 include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
@@ -115,7 +128,7 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=45
+    wifi.supplicant_scan_interval=180
 
 #
 # Qcom
