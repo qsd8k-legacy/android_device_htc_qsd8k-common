@@ -80,9 +80,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.performance.tuning=1 \
     video.accelerate.hw=1 \
     view.scroll_friction=0 \
-    ro.zygote.disable_gl_preload=true \
-    ro.max.fling_velocity=12000 \
-    ro.min.fling_velocity=8000
+    ro.zygote.disable_gl_preload=true
 
 #
 # Low Mem
@@ -90,14 +88,30 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
 # Disable jit
 PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.jit.codecachesize=0
+# Enable Allow purging of assets
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.purgeable_assets=1
+
+#
+# Battery tweaks
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.mot.eri.losalert.delay=1000 \
+    pm.sleep_mode=1
+
+#
+# Scrolling tweaks
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.max.fling_velocity=12000 \
+    ro.min.fling_velocity=8000
 
 #
 # Dalvik Properties
 #
-
-# dexop-flags: "v=" n|r|a, "o=" n|v|a|f, "m=y" register map
-# v=verify o=optimize: n=none r=remote a=all f=full v=verified
 PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapgrowthlimit=64m \
+    dalvik.vm.heapsize=64m \
+    dalvik.vm.execution-mode=int:jit \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.dexopt-flags=m=y \
     ro.sys.fw.bg_apps_limit=12 \
