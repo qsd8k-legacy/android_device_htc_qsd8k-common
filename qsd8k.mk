@@ -74,10 +74,16 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
-    debug.hwc.fakevsync=1 \
+    debug.sf.no_hw_vsync=1 \
     debug.composition.type=mdp \
+    debug.egl.profiler=1
+    debug.egl.hw=1 \
+    debug.composition.type=gpu \
     debug.gr.numframebuffers=2 \
     debug.performance.tuning=1 \
+    debug.hwui.render_dirty_regions=false \
+    persist.sys.ui.hw=1 \
+    persist.webview.provider=classic \
     video.accelerate.hw=1 \
     view.scroll_friction=0 \
     ro.zygote.disable_gl_preload=true
@@ -102,6 +108,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Scrolling tweaks
 #
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.min_pointer_dur=8 \
     ro.max.fling_velocity=12000 \
     ro.min.fling_velocity=8000
 
@@ -109,7 +116,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Dalvik Properties
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=64m \
+    dalvik.vm.heapgrowthlimit=48m \
     dalvik.vm.heapsize=64m \
     dalvik.vm.execution-mode=int:jit \
     dalvik.vm.lockprof.threshold=500 \
