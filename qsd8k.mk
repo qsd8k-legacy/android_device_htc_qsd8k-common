@@ -70,6 +70,8 @@ PRODUCT_PACKAGES += \
 
 #
 # Hardware Rendering Properties
+# 
+# debug.sf.hw = 1 (Render UI with GPU)
 #
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -89,28 +91,51 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.zygote.disable_gl_preload=true
 
 #
-# Low Mem
+# Low Mem tweaks
 #
 PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
 # Disable jit
 PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.jit.codecachesize=0
-# Enable Allow purging of assets
+# Allows purging of assets to free up RAM
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.purgeable_assets=1
 
 #
 # Battery tweaks
 #
+# Caution: ro.mot.eri.losalert.delay=1000 (might break tethering)
+# pm.sleep_mode=0 := MSM_PM_SLEEP_MODE_POWER_COLLAPSE_SUSPEND
+# pm.sleep_mode=1 := MSM_PM_SLEEP_MODE_POWER_COLLAPSE
+#
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.mot.eri.losalert.delay=1000 \
-    pm.sleep_mode=1
+    pm.sleep_mode=1 \
+    ro.ril.power_collapse=1
+    
+#
+# Telephony/ring Tweaks
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.call_ring.delay=0 \
+    ring.delay=0
+
+#
+# Proximity (Disable blackscreen issue after call)
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+    mot.proximity.delay=0 \
+    ro.lge.proximity.delay=25
 
 #
 # Scrolling tweaks
 #
+# windowsmgr.max_events_per_sec := 60..300
+# (any value much higher than 90 is unlikely to have any noticeable impact)
+#
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.min_pointer_dur=8 \
     ro.max.fling_velocity=12000 \
-    ro.min.fling_velocity=8000
+    ro.min.fling_velocity=8000 \
+    windowsmgr.max_events_per_sec=90
 
 #
 # Dalvik Properties
@@ -147,9 +172,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
 # Properties
+#
+# wifi.supplicant_scan_interval (was before 180; ppl complaint about issues with enabling Wifi. The new value should be fair enough to save battery)
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=180
+    wifi.supplicant_scan_interval=120
 
 #
 # Qcom
