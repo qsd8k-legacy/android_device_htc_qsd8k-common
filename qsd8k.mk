@@ -18,7 +18,7 @@
 PRODUCT_LOCALES := en
 
 # High Density art
-PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Misc
