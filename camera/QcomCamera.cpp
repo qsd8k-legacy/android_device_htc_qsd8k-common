@@ -251,8 +251,8 @@ camera_memory_t * internal_generate_client_data(const sp<IMemory> &dataPtr,
    camera_memory_t *clientData = NULL;
    sp<IMemoryHeap> mHeap = dataPtr->getMemory(&offset, &size);
 
-   /*ALOGV("%s: offset:%#x size:%#x base:%p", __FUNCTION__
-	(unsigned)offset, size, mHeap != NULL ? mHeap->base() : 0);*/
+   ALOGV("%s: offset:%#x size:%#x base:%p", __FUNCTION__
+        ,(unsigned)offset, size, mHeap != NULL ? mHeap->base() : 0);
 
    clientData = reqClientMemory(-1, size, 1, user);
    if (clientData != NULL) {
