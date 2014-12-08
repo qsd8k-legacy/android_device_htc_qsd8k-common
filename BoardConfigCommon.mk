@@ -91,6 +91,28 @@ BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_NO_HW_VSYNC := true
 COMMON_GLOBAL_CFLAGS += -DTARGET_8x50
 TARGET_USES_ION := true
+
+# GPS
+TARGET_QCOM_GPS_VARIANT := legacy
+BOARD_VENDOR_QCOM_AMSS_VERSION := 3200
+
+# Kernel
+TARGET_KERNEL_SOURCE := kernel/htc/qsd8k
+BUILD_KERNEL := true
+KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.4.3/bin/arm-eabi-
+
+# Skip recovery for now to keep things moving
+TARGET_SKIP_RECOVERY_BUILD := true
+
+# Recovery
+DEVICE_RESOLUTION := 480x800
+TW_NO_SCREEN_BLANK := true
+TW_EXCLUDE_ENCRYPTED_BACKUPS := true
+TW_USE_TOOLBOX := true
+TW_EXCLUDE_SUPERSU := true
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+
+# Screenshot fix
 TARGET_FORCE_SCREENSHOT_CPU_PATH := true
 
 #Fix slow boot
