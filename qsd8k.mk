@@ -55,9 +55,7 @@ PRODUCT_PACKAGES += \
 # Omx
 PRODUCT_PACKAGES += \
     libOmxCore \
-    libOmxVdec \
     libstagefrighthw
-#    libOmxVidEnc \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -67,7 +65,8 @@ PRODUCT_PACKAGES += \
 # Misc
 PRODUCT_PACKAGES += \
     power.qsd8k \
-    com.android.future.usb.accessory
+    com.android.future.usb.accessory \
+    libnetcmdiface
 
 #
 # Hardware Rendering Properties
@@ -95,8 +94,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Low Mem tweaks
 #
 PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+
 # Disable jit
 PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.jit.codecachesize=0
+
 # Allows purging of assets to free up RAM
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.purgeable_assets=1
 
@@ -142,13 +143,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Dalvik Properties
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=48m \
-    dalvik.vm.heapsize=64m \
+    dalvik.vm.checkjni=false \
+    dalvik.vm.dexopt-data-only=1 \
     dalvik.vm.execution-mode=int:jit \
+    dalvik.vm.verify-bytecode=false \
     dalvik.vm.lockprof.threshold=500 \
-    dalvik.vm.dexopt-flags=m=y \
+    dalvik.vm.debug.alloc=0 \
     ro.sys.fw.bg_apps_limit=12 \
-    dalvik.vm.checkjni=false
+    sys.mem.max_hidden_apps=7 \
+    ro.config.max_starting_bg=7
 
 # Default heap settings for 512mb device
 include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
