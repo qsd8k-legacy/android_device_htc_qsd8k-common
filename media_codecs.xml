@@ -76,6 +76,9 @@ Only the three quirks included above are recognized at this point:
 -->
 
 <MediaCodecs>
+    <Include href="media_codecs_google_audio.xml" />
+    <Include href="media_codecs_google_telephony.xml" />
+    <Include href="media_codecs_google_video.xml" />
     <Decoders>
 <!--        <MediaCodec name="OMX.SEC.MPEG4.Decoder" type="video/mp4v-es" >-->
 <!--            <Quirk name="output-buffers-are-unreadable" />-->
