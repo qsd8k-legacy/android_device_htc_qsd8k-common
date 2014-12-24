@@ -40,6 +40,10 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.qsd8k \
     audio_policy.qsd8k
+    
+# Disable atlas services on low-ram targets
+PRODUCT_PROPERTY_OVERRIDES += \
+    config.disable_atlas=true
 
 # Camera
 PRODUCT_PACKAGES += \
