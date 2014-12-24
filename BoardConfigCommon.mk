@@ -109,3 +109,36 @@ WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path
 WIFI_DRIVER_MODULE_NAME          := bcmdhd
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 BOARD_LEGACY_NL80211_STA_EVENTS  := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/qcom/policy/common
+
+BOARD_SEPOLICY_UNION += \
+    bluetooth.te \
+    radio.te \
+    file_contexts \
+    te_macros \
+    device.te \
+    dhcp.te \
+    domain.te \
+    file.te \
+    init.te \
+    kickstart.te \
+    mediaserver.te \
+    netmgrd.te \
+    qmiproxy.te \
+    qmuxd.te \
+    rild.te \
+    secril.te \
+    servicemanager.te \
+    sysinit.te \
+    system.te \
+    system_server.te \
+    time_daemon.te \
+    ueventd.te \
+    vold.te \
+    wpa.te \
+    wpa_supplicant.te \
+    zygote.te
+    
