@@ -46,8 +46,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     config.disable_atlas=true
 
 # Camera
-PRODUCT_PACKAGES += \
-    camera.qsd8k
+#PRODUCT_PACKAGES += \
+#    camera.qsd8k
     
 # Newer camera API isn't supported.
 PRODUCT_PROPERTY_OVERRIDES += \
