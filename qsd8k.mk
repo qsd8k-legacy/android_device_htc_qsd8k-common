@@ -179,8 +179,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #
 # Wifi
 #
-PRODUCT_PACKAGES += \
-    wpa_supplicant
 
 # Firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
