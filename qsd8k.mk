@@ -170,6 +170,12 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1
 
+# Force ART compilation even for eng target variant builds.
+# (instead of slow interpret-only mode which is default for eng in Lollipop)
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.image-dex2oat-filter="" \
+    dalvik.vm.dex2oat-filter=speed
+
 #
 # Camera (video recording)
 #
