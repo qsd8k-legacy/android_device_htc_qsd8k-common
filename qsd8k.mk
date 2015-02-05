@@ -93,7 +93,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.performance.tuning=1 \
     debug.hwui.render_dirty_regions=false \
     persist.sys.ui.hw=1 \
-    persist.webview.provider=classic \
     video.accelerate.hw=1 \
     view.scroll_friction=0 \
     ro.zygote.disable_gl_preload=true
