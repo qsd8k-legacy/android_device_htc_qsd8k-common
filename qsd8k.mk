@@ -156,15 +156,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.verify-bytecode=false \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.debug.alloc=0 \
-    ro.sys.fw.bg_apps_limit=12 \
+    ro.sys.fw.bg_apps_limit=7 \
     sys.mem.max_hidden_apps=7 \
-    ro.config.max_starting_bg=7
+    ro.config.max_starting_bg=4
 
 # Default heap settings for 512mb device
 include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
+
+# Allow bypassing setupwizard
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.setupwizard.enable_bypass=1
 
 #
 # Camera (video recording)
