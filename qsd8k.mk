@@ -183,6 +183,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi
 #
 
+# Firmware
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
+
 # Properties
 #
 # wifi.supplicant_scan_interval (was before 180; ppl complaint about issues with enabling Wifi. The new value should be fair enough to save battery)
