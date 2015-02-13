@@ -138,13 +138,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Scrolling tweaks
 #
 # windowsmgr.max_events_per_sec := 60..300
-# (any value much higher than 90 is unlikely to have any noticeable impact)
+# any value much higher than 90 is unlikely to have any noticeable impact
+# on LP they say 120 brings a better result
 #
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.min_pointer_dur=8 \
     ro.max.fling_velocity=12000 \
     ro.min.fling_velocity=8000 \
-    windowsmgr.max_events_per_sec=90
+    windowsmgr.max_events_per_sec=120
 
 #
 # Dalvik Properties
@@ -156,9 +157,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.verify-bytecode=false \
     dalvik.vm.lockprof.threshold=500 \
     dalvik.vm.debug.alloc=0 \
-    ro.sys.fw.bg_apps_limit=7 \
-    sys.mem.max_hidden_apps=7 \
-    ro.config.max_starting_bg=4
+    ro.sys.fw.bg_apps_limit=4 \
+    sys.mem.max_hidden_apps=4 \
+    ro.config.max_starting_bg=2
 
 # Default heap settings for 512mb device
 include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
