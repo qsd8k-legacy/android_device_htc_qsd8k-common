@@ -84,13 +84,6 @@ BOARD_VENDOR_QCOM_AMSS_VERSION := 3200
 # Skip recovery for now to keep things moving
 TARGET_SKIP_RECOVERY_BUILD := true
 
-# Recovery
-DEVICE_RESOLUTION := 480x800
-TW_NO_SCREEN_BLANK := true
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
-TW_USE_TOOLBOX := true
-TW_EXCLUDE_SUPERSU := true
-
 # Screenshot fix
 TARGET_FORCE_SCREENSHOT_CPU_PATH := true
 
