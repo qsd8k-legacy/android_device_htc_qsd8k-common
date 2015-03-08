@@ -518,18 +518,11 @@ void set_callbacks(struct camera_device * device,
 void enable_msg_type(struct camera_device * device, int32_t msg_type)
 {
    ALOGV("enable_msg_type: msg_type:%#x", msg_type);
-   ALOGV("%s+++: type %i device %p", __FUNCTION__, msg_type,device);
-    if (msg_type & CAMERA_MSG_RAW_IMAGE_NOTIFY) {
-    	dummy_raw_image_msg = 1;
-        //msg_type &= ~CAMERA_MSG_RAW_IMAGE_NOTIFY;
-        msg_type |= CAMERA_MSG_RAW_IMAGE;
-	}
-	//Brian fix a lot of 3rd camera apk glitches start
-    else if (msg_type & CAMERA_MSG_COMPRESSED_IMAGE)
-	{
-	dummy_raw_image_msg = 1;
-	msg_type |= CAMERA_MSG_RAW_IMAGE | CAMERA_MSG_SHUTTER;
-	} 
+   if (msg_type == 0xfff) {
+      msg_type = 0x1ff;
+   } else {
+      msg_type &= ~(CAMERA_MSG_PREVIEW_METADATA | CAMERA_MSG_RAW_IMAGE_NOTIFY);
+   }
    qCamera->enableMsgType(msg_type);
 }
 
