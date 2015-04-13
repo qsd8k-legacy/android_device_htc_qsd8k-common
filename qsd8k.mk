@@ -21,11 +21,6 @@ PRODUCT_LOCALES := en
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
-# Configs
-PRODUCT_COPY_FILES += \
-    device/htc/qsd8k-common/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/qsd8k-common/audio_policy.conf:system/etc/audio_policy.conf
-
 # Misc
 PRODUCT_COPY_FILES += \
     device/htc/qsd8k-common/init.power.rc:root/init.power.rc
@@ -232,10 +227,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# Media configuration
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
+    device/htc/qsd8k-common/media_codecs.xml:system/etc/media_codecs.xml \
+    device/htc/qsd8k-common/audio_policy.conf:system/etc/audio_policy.conf
 
 # Proprietary blobs
 $(call inherit-product-if-exists, vendor/htc/qsd8k-common/qsd8k-vendor.mk)
