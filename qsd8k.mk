@@ -167,6 +167,12 @@ include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# Use ART small mode
+# as described here: http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-filter=interpret-only \
+    dalvik.vm.image-dex2oat-filter=speed
+
 # Allow bypassing setupwizard
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1
