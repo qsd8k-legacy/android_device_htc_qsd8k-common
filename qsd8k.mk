@@ -236,5 +236,10 @@ PRODUCT_COPY_FILES += \
     device/htc/qsd8k-common/media_codecs.xml:system/etc/media_codecs.xml \
     device/htc/qsd8k-common/audio_policy.conf:system/etc/audio_policy.conf
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    lpa.decode=false \
+    use.non-omx.aac.decoder=false \
+    use.non-omx.mp3.decoder=false
+
 # Proprietary blobs
 $(call inherit-product-if-exists, vendor/htc/qsd8k-common/qsd8k-vendor.mk)
