@@ -55,11 +55,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.qsd8k \
     memtrack.qsd8k
 
-# Omx
-PRODUCT_PACKAGES += \
-    libOmxCore \
-    libstagefrighthw
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
@@ -240,6 +235,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     lpa.decode=false \
     use.non-omx.aac.decoder=false \
     use.non-omx.mp3.decoder=false
+
+PRODUCT_PACKAGES += \
+    libOmxCore \
+    libOmxVdec \
+    libOmxVenc \
+    libc2dcolorconvert \
+    libdashplayer \
+    libstagefrighthw
 
 # Proprietary blobs
 $(call inherit-product-if-exists, vendor/htc/qsd8k-common/qsd8k-vendor.mk)
