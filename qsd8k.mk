@@ -96,7 +96,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.shape_cache_size=1 \
     ro.hwui.drop_shadow_cache_size=2 \
     ro.hwui.r_buffer_cache_size=2 \
-    ro.hwui.texture_cache_flush_rate=0.6 \
     ro.hwui.text_small_cache_width=1024 \
     ro.hwui.text_small_cache_height=256 \
     ro.hwui.text_large_cache_width=2048 \
