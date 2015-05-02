@@ -281,11 +281,7 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libc2dcolorconvert \
     libdashplayer \
-    libstagefrighthw \
-    qcmediaplayer
-    
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+    libstagefrighthw
 
 # Proprietary blobs
 $(call inherit-product-if-exists, vendor/htc/qsd8k-common/qsd8k-vendor.mk)
