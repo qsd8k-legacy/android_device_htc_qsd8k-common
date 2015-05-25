@@ -108,10 +108,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     hwui.render_dirty_regions=false \
     hwui.use.blacklist=true
 
-# WEBVIEW / is only for 2.x kernel and this fix blackscreen in google apps
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.webview.provider=classic
-
 # DISABLE ERROR CHECKING
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.android.checkjni=0
@@ -279,7 +275,6 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libc2dcolorconvert \
-    libdashplayer \
     libstagefrighthw
 
 # Proprietary blobs
