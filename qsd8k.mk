@@ -44,6 +44,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
+# Camera ZSL mode off
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.zsl.prop.enable=0
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.qsd8k \
