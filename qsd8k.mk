@@ -120,6 +120,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.dalvik.multithread=false
 
+# Run only one dex2oat at a time
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.fw.dex2oat_thread_count=1
+
 #
 # Low Mem tweaks
 #
