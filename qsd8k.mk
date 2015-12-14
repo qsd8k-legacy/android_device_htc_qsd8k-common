@@ -53,7 +53,8 @@ PRODUCT_PACKAGES += \
     copybit.qsd8k \
     gralloc.qsd8k \
     hwcomposer.qsd8k \
-    memtrack.qsd8k
+    memtrack.qsd8k \
+    libstlport
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
