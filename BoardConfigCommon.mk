@@ -98,10 +98,6 @@ TARGET_SKIP_RECOVERY_BUILD := true
 # Screenshot fix
 TARGET_FORCE_SCREENSHOT_CPU_PATH := true
 
-# Webkit
-TARGET_FORCE_CPU_UPLOAD := true
-ENABLE_WEBGL := true
-
 # Wifi
 WIFI_BAND                        := 802_11_ABG
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
