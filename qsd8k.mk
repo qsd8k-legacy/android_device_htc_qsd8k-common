@@ -145,6 +145,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sys.mem.max_hidden_apps=6 \
     ro.config.max_starting_bg=3
 
+# Temp fix for the media issues
+# offloading if it works stable is great because media processing is not done on the cpu
+audio.offload.disable=1
+audio.offload.pcm.enable=false
+
 # Default heap settings for 512mb device
 include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 
@@ -158,7 +163,8 @@ include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.mot.eri.losalert.delay=1000 \
     pm.sleep_mode=1 \
-    ro.ril.power_collapse=1
+    ro.ril.power_collapse=1 \
+    power.saving.mod=1
     
 #
 # Telephony/ring Tweaks
