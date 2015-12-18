@@ -141,9 +141,8 @@ PRODUCT_PROPERTY_OVERRIDES += config.disable_atlas=true
 
 # App limits    
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.bg_apps_limit=12 \
-    sys.mem.max_hidden_apps=6 \
-    ro.config.max_starting_bg=3
+    ro.sys.fw.bg_apps_limit=16 \
+    ro.config.max_starting_bg=8
 
 # Temp fix for the media issues
 # offloading if it works stable is great because media processing is not done on the cpu
