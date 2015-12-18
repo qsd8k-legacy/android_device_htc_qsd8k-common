@@ -58,10 +58,6 @@ TARGET_NEEDS_BIONIC_PRELINK_SUPPORT := true
 BOARD_USES_PMEM_ADSP := true
 TARGET_NEEDS_NON_PIE_SUPPORT := true
 TARGET_DISABLE_ARM_PIE := true
-
-# Legacy OMX patch for Camcorder and 720p playback
-TARGET_LEGACY_OMX_QSD8K := true
-TARGET_QCOM_LEGACY_OMX := true
 TARGET_USES_SUBMIT_ONE_INPUT_BUFFER := true
 
 # Compass/Accelerometer
