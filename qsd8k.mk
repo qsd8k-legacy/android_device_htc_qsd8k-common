@@ -54,7 +54,8 @@ PRODUCT_PACKAGES += \
     gralloc.qsd8k \
     hwcomposer.qsd8k \
     memtrack.qsd8k \
-    libstlport
+    libstlport \
+    libgenlock
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -78,7 +79,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.no_hw_vsync=1 \
     debug.egl.profiler=1 \
     debug.egl.hw=1 \
-    debug.composition.type=mdp \
+    debug.composition.type=dyn \
     debug.hwc.fakevsync=1 \
     debug.gr.numframebuffers=2 \
     debug.performance.tuning=1 \
