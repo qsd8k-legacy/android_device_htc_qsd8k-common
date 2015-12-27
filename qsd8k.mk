@@ -121,10 +121,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.dalvik.multithread=false
 
-# Run only one dex2oat at a time
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.dex2oat_thread_count=1
-
 #
 # Low Mem tweaks
 #
@@ -212,8 +208,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # as described here: http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-filter=balanced \
+    dalvik.vm.dex2oat-swap=false \
     dalvik.vm.dex2oat-flags=--no-watch-dog \
     dalvik.vm.image-dex2oat-filter=speed
+
+# Run only one dex2oat at a time
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.fw.dex2oat_thread_count=1
 
 # Allow bypassing setupwizard
 PRODUCT_PROPERTY_OVERRIDES += \
