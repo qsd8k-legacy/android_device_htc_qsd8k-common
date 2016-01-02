@@ -115,6 +115,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     hwui.render_dirty_regions=false \
     hwui.use.blacklist=true
 
+# FPS Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.fps_enable=1
+    ro.fps.capsmin=30fps
+    ro.fps.capsmax=60fps
+
 # DISABLE ERROR CHECKING
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.android.checkjni=0
