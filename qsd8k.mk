@@ -190,19 +190,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     windowsmgr.max_events_per_sec=120
 
 #
-# Dalvik Properties
+# ART Properties
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.checkjni=false \
-    dalvik.vm.dexopt-data-only=1 \
-    dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.verify-bytecode=false \
-    dalvik.vm.lockprof.threshold=500 \
-    dalvik.vm.debug.alloc=0
-
-# MAKES APPS LOAD FASTER AND FREES MORE RAM
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
+    art.vm.dexopt-flags=m=v,o=y
 
 # Use ART small mode
 # as described here: http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
