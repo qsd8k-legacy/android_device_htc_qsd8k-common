@@ -86,6 +86,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     video.accelerate.hw=1 \
     view.scroll_friction=0 \
     ro.zygote.disable_gl_preload=true
+    debug.gr.swapinterval=0 \
+    persist.sys.use_16bpp_alpha=1
 
 #
 # HWUI TWEAKS (credits pixelfreak & walter79)
