@@ -62,7 +62,7 @@ void SensorManager::sensorManagerDied()
 }
 
 status_t SensorManager::assertStateLocked() const {
-    if (mSensorServer == NULL) {
+    /*if (mSensorServer == NULL) {
         // try for one second
         const String16 name("sensorservice");
         for (int i=0 ; i<4 ; i++) {
@@ -96,7 +96,7 @@ status_t SensorManager::assertStateLocked() const {
         for (size_t i=0 ; i<count ; i++) {
             mSensorList[i] = mSensors.array() + i;
         }
-    }
+    }*/
 
     return NO_ERROR;
 }
@@ -145,7 +145,7 @@ sp<SensorEventQueue> SensorManager::createEventQueue()
     sp<SensorEventQueue> queue;
 
     Mutex::Autolock _l(mLock);
-    while (assertStateLocked() == NO_ERROR) {
+    /*while (assertStateLocked() == NO_ERROR) {
         sp<ISensorEventConnection> connection =
                 mSensorServer->createSensorEventConnection(String8(""), 0, gPackageName);
         if (connection == NULL) {
@@ -155,7 +155,7 @@ sp<SensorEventQueue> SensorManager::createEventQueue()
         }
         queue = new SensorEventQueue(connection);
         break;
-    }
+    }*/
     return queue;
 }
 
