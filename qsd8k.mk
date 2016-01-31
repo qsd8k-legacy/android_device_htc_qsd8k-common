@@ -39,8 +39,9 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.qsd8k \
-    libshim_camera
-    
+    libshim_camera \
+    libshim_skia
+
 # Newer camera API isn't supported.
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
