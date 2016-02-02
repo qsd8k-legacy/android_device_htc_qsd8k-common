@@ -91,6 +91,9 @@ BOARD_USES_HWCOMPOSER := true
 TARGET_QCOM_GPS_VARIANT := legacy
 BOARD_VENDOR_QCOM_AMSS_VERSION := 3200
 
+# Use custom healthd HAL
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.qsd8k
+
 # Skip recovery for now to keep things moving
 TARGET_SKIP_RECOVERY_BUILD := true
 
