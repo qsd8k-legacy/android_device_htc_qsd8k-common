@@ -191,11 +191,6 @@ static char *camera_fixup_getparams(int id, const char *settings)
         params.set("max-sharpness", value);
     }
 
-	/* Face detection */
-	params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
-	params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
-	params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
-
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
@@ -223,11 +218,6 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
     if (isVideo) {
         params.set(android::CameraParameters::KEY_ROTATION, "0");
     }
-
-	/* Face detection */
-	params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
-	params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
-	params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
 
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
