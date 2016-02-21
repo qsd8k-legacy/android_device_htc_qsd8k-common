@@ -46,10 +46,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
-# Camera ZSL mode off
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.zsl.prop.enable=0
-
 # Display
 PRODUCT_PACKAGES += \
     copybit.qsd8k \
@@ -66,7 +62,6 @@ PRODUCT_PACKAGES += \
 # Misc
 PRODUCT_PACKAGES += \
     power.qsd8k \
-    com.android.future.usb.accessory \
     libnetcmdiface
 
 #
@@ -152,8 +147,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Temp fix for the media issues
 # offloading if it works stable is great because media processing is not done on the cpu
-audio.offload.disable=1
-audio.offload.pcm.enable=false
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.disable=1 \
+    audio.offload.pcm.enable=false
 
 # Default heap settings for 512mb device
 include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
@@ -274,24 +270,8 @@ PRODUCT_COPY_FILES += \
 
 # Media configuration
 PRODUCT_COPY_FILES += \
-    #frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    #frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    #frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    #frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
     device/htc/qsd8k-common/media_codecs.xml:system/etc/media_codecs.xml \
     device/htc/qsd8k-common/audio_policy.conf:system/etc/audio_policy.conf
-
-#PRODUCT_PROPERTY_OVERRIDES += \
-    #lpa.decode=false \
-    #use.non-omx.aac.decoder=false \
-    #use.non-omx.mp3.decoder=false
-
-#PRODUCT_PACKAGES += \
-    #libOmxCore \
-    #libOmxVdec \
-    #libOmxVenc \
-    #libc2dcolorconvert \
-    #libstagefrighthw
 
 # Proprietary blobs
 $(call inherit-product-if-exists, vendor/htc/qsd8k-common/qsd8k-vendor.mk)
