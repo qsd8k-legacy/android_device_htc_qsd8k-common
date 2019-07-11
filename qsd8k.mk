@@ -40,7 +40,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.qsd8k \
     libshim_camera \
-    libshim_skia
+   # libshim_skia
 
 # Newer camera API isn't supported.
 PRODUCT_PROPERTY_OVERRIDES += \
