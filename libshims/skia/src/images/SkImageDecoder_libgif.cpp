@@ -239,7 +239,7 @@ SkImageDecoder::Result SkGIFImageDecoder::onDecode(SkStream* sk_stream, SkBitmap
         return error_return(*bm, "DGifOpen");
     }
 
-    SkAutoTCallIProc<GifFileType, DGifCloseFile> acp(gif);
+  //  SkAutoTCallIProc<GifFileType, DGifCloseFile> acp(gif);
 
     SavedImage temp_save;
     temp_save.ExtensionBlocks=NULL;
